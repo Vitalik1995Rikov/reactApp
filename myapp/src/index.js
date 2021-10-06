@@ -10,18 +10,18 @@ const Collapse = () => {
   }
 
   return (
-    <div>
-      <button>
+    <div className="collapse">
+      <button onClick={onClickHandle}>
+        {isOpen ? 'Скрыть' : 'Показать'}
       </button>
+      <div className={"content"}>
+
+      </div>
     </div>
   )
+}
 
 ReactDOM.render(
-    <div>
-      <h2>Нажмите на строки</h2>
-      <Title text="Строка #1"/>
-      <Title text="Строка #2"/>
-      <Title text="Строка #3"/>
-    </div>,
+    <Collapse/>,
   document.getElementById('root')
 );
