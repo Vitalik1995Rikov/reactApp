@@ -12,10 +12,13 @@ const Collapse = () => {
   return (
     <div className="collapse">
       <button onClick={onClickHandle}>
-        {isOpen ? 'Скрыть' : 'Показать'}
+        {isOpen ? "Скрыть" : "Показать"}
       </button>
-      <div className={"content"}>
-
+      <div className={"content " + (isOpen ? "open" : "close")}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
       </div>
     </div>
   )
