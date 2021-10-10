@@ -24,27 +24,17 @@ const Form = () => {
   const [fields, dispatch] = useReducer(reducer, initialState)
 
   const onSubmitHandle = event => {
-    
+
     event.preventDefault()
 
     console.log(fields)
   }
 
-const onSetLogin = event => {
+const onSetValue = event => {
   dispatch({
     type: "set-field-value",
     payload: {
-      name: "login",
-      value: event.target.value
-    }
-  })
-}
-
-const onSetPassword = event => {
-  dispatch({
-    type: "set-field-value",
-    payload: {
-      name: "password",
+      name: event.target.name,
       value: event.target.value
     }
   })
@@ -54,13 +44,15 @@ return (
   <form onSubmit={onSubmitHandle} >
     <input 
       value={fields.login} 
-      onChange={onSetLogin} 
+      onChange={onSetValue} 
+      name="login"
       type="text" 
       placeholder="Введите логин"
     />
     <input 
       value={fields.password} 
-      onChange={onSetPassword}
+      onChange={onSetValue}
+      name="password"
       type="password" 
       placeholder="Введите пароль" 
     />
