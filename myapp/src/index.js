@@ -14,6 +14,7 @@ function reducer (state, action) {
         ...state,
         [action.payload.name]: action.payload.value
       }
+
       default:
       throw new Error("Unknown action")
   }
@@ -21,10 +22,14 @@ function reducer (state, action) {
 
 const Form = () => {
   const [fields, dispatch] = useReducer(reducer, initialState)
+
   const onSubmitHandle = event => {
+    
     event.preventDefault()
+
     console.log(fields)
   }
+
 const onSetLogin = event => {
   dispatch({
     type: "set-field-value",
