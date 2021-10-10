@@ -1,45 +1,70 @@
-import React, {createContext, useContext} from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 
-const testContext = createContext()
-
-const ComponentC = (props) => {
-  const context = useContext(testContext)
-  const styles = {color: context.color}
-
-  return (
-    <p style={styles}>ComponentC</p>
-  )
+const initialState = {
+  login: "",
+  password: ""
 }
 
-const ComponentB = () => {
-  return (
-    <div>
-      <p>ComponentB</p>
-      <ComponentC/>
-    </div>
-  )
+function reducer (state, action) {
+  switch (action.type) {
+    case 'set-field-value':
+      return {
+        ...state,
+        [action.payload.name]: action.payload.value
+      }
+      default:
+      throw new Error("Unknown action")
+  }
 }
 
-const {Provider} = testContext
-
-const ComponentA = () => {
-  const color = "#31c5b2"
-  const contextValue = {color}
-
-  return (
-    <Provider value={contextValue}>
-    <div>
-      <p>ComponentA</p>
-      <ComponentB/>
-    </div>
-    </Provider>
-  )
+const Form = () => {
+  const [fields, dispatch] = useReducer(reducer, initialState)
+  const onSubmitHandle = event => {
+    event.preventDefault()
+    console.log(fields)
+  }
+const onSetLogin = event => {
+  dispatch({
+    type: "set-field-value",
+    payload: {
+      name: "login",
+      value: event.target.value
+    }
+  })
 }
 
+const onSetPassword = event => {
+  dispatch({
+    type: "set-field-value",
+    payload: {
+      name: "password",
+      value: event.target.value
+    }
+  })
+}
 
+return (
+  <form onSubmit={onSubmitHandle} >
+    <input 
+      value={fields.login} 
+      onChange={onSetLogin} 
+      type="text" 
+      placeholder="Введите логин"
+    />
+    <input 
+      value={fields.password} 
+      onChange={onSetPassword}
+      type="password" 
+      placeholder="Введите пароль" 
+    />
+    <button>Войти</button>
+  </form>
+)
+}
 
 ReactDOM.render(
-    <ComponentA/>,
+    <Form/>,
   document.getElementById('root')
 );
