@@ -33,7 +33,7 @@ function myReducer(state = initialState, action) {
                     if (item.id === payload.id) {
                         return {
                             ...item,
-                            count: item.count + 1,
+                            count: item.count - 1,
                         };
                     }
                     return item;

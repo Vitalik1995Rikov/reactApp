@@ -9,7 +9,7 @@ export default function Products() {
       const { id } = event.target.dataset;
   
       dispatch({
-        type: "Добавить продукт",
+        type: "Add product",
         payload: { id },
       });
     };
@@ -20,7 +20,7 @@ export default function Products() {
   
       if (product.count >= 1) {
         dispatch({
-          type: "Убрать продукт",
+          type: "Delete product",
           payload: { id },
         });
       }
