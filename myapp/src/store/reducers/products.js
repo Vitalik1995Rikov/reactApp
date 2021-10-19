@@ -12,7 +12,7 @@ export default function productsReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    // Если нужно добавить продукт
+    
     case constants.ADD_PRODUCT:
       return {
         ...state,
@@ -28,7 +28,6 @@ export default function productsReducer(state = initialState, action) {
         }),
       };
 
-    // Если нужно убрать продукт
     case constants.REMOVE_PRODUCT:
       return {
         ...state,
@@ -44,7 +43,6 @@ export default function productsReducer(state = initialState, action) {
         }),
       };
 
-    // В любом другом случае возвращаем старое состояние
     default:
       return state;
   }
