@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const text = 'Clean project'
+
 const elem = (
   <div>
-    <h2>Clean project</h2>
+    <h2>{text}</h2>
     <input type="text"/>
-    <button/>
+    <button>Click</button>
   </div>
 );
 
