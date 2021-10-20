@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App";
 
+const elem = (
+  <div>
+    <h2>Clean project</h2>
+    <input type="text"/>
+    <button/>
+  </div>
+);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
+    elem,
   document.getElementById('root')
 );
