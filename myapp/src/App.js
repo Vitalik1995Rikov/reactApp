@@ -14,8 +14,12 @@ const Field = () => {
 }
 
 const Btn = () => {
+    const text = 'Log in';
+    // const logged = true;
+    const logged = false;
+
     return (
-        <button/>
+        <button>{logged ? "Enter" : text}</button>
     )
 }
 
