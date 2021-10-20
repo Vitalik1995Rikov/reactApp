@@ -1,3 +1,4 @@
+import {Component} from 'react';
 import './App.css';
 
 
@@ -7,10 +8,20 @@ const Header = () => {
     )
 }
 
-const Field = () => {
-    return (
-        <input type="text" placeholder="Input here"/>
-    )
+// const Field = () => {
+//     return (
+//         <input type="text" placeholder="Input here"/>
+//     )
+// }
+
+class Field extends Component {
+    render() {
+        const holder = "Enter here";
+        const styleField = {
+            width: '300px'
+        };
+        return <input type="text" placeholder={holder} style={styleField}/>
+    }
 }
 
 const Btn = () => {
