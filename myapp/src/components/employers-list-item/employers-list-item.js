@@ -1,4 +1,4 @@
-
+import './employers-list-item.css';
 
 function EmployersListItem() {
     return (
