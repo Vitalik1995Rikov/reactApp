@@ -1,6 +1,8 @@
 import AppInfo from "../app-info/app-info";
 import SeachPanel from "../seach-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
+import EmployersListItem from "../employers-list-item/employers-list-item";
+
 import "./app.css";
 
 
@@ -11,6 +13,7 @@ function App() {
             <div className="search-panel">
                 <SeachPanel/>
                 <AppFilter/>
+                <EmployersListItem/>
             </div>
         </div>
     )
