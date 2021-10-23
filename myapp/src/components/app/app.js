@@ -20,6 +20,7 @@ function App() {
     return (
         <div className="app">
             <WhoAmI name="John" surname="Black" link="facebook.com"/>
+            <WhoAmI name="Alex" surname="White" link="vk.com"/>
             <AppInfo/>
             <div className="search-panel">
                 <SeachPanel/>
