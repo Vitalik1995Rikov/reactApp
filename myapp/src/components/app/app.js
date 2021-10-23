@@ -7,9 +7,19 @@ import EmployersAddForm from "../employers-add-form/employers-add-form";
 import "./app.css";
 
 
+function WhoAmI(props) {
+    return (
+        <div>
+            <h1>My name is {props.name}, surname - {props.surname}</h1>
+            <a href={props.link}>My profile</a>
+        </div>
+    )
+}
+
 function App() {
     return (
         <div className="app">
+            <WhoAmI name="John"/>
             <AppInfo/>
             <div className="search-panel">
                 <SeachPanel/>
