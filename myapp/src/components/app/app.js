@@ -19,7 +19,7 @@ function WhoAmI(props) {
 function App() {
     return (
         <div className="app">
-            <WhoAmI name="John"/>
+            <WhoAmI name="John" surname="Black" link="facebook.com"/>
             <AppInfo/>
             <div className="search-panel">
                 <SeachPanel/>
