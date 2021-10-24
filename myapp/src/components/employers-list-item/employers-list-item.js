@@ -1,10 +1,10 @@
 import './employers-list-item.css';
 
-function EmployersListItem() {
+function EmployersListItem({name, salary}) {
     return (
         <li className="list-group-item d-flex justify-content-between">
-            <span className="list-group-item-label">Ivan Ivanov</span>
-            <input type="text" className="list-group-item-input" defaulValue="1000$"/>
+            <span className="list-group-item-label">{name}</span>
+            <input type="text" className="list-group-item-input" defaulValue={salary}/>
             <div className="d-flex justify-content-center align-items-center">
                 <button type="button" className="btn-cookie btn-sm">
                     <i className="fas fa-cookie"></i>
