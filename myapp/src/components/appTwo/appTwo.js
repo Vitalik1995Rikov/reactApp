@@ -3,8 +3,12 @@ import { Component } from 'react';
 import './appTwo.css';
 
 class WhoAmI extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
+        this.state = {
+            years: 27
+        }
     }
     render() {
         const {name, surname, link} = this.props;
