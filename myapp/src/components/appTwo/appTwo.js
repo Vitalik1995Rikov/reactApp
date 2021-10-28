@@ -10,9 +10,10 @@ class WhoAmI extends Component {
             text: '+++',
             position: ''
         }
+        this.nextYear = this.nextYear.bind(this);
     }
 
-    nextYear = () => {
+    nextYear() {
         this.setState(state => ({
             years: state.years + 1
         }))
