@@ -22,7 +22,7 @@ function App() {
                 <SeachPanel/>
                 <AppFilter/>
             </div>
-            <EmployersList data={data}/>
+            <EmployersList data={data} onDelete={id => console.log(id)}/>
             <EmployersAddForm/>
         </div>
     )
